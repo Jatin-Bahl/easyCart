@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Products Page</title>
+        <style>
+        nav{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    {{> navbar}}
+    <h1>Admin Products List</h1>
+
+    <ul>
+        {{#each products as |p|}}
+        <li>
+            <img height="150px" src={{p.imageUrl}}></img><br>
+            Name: <span>{{p.name}}</span> <br>
+            Description: <span>{{p.description}}</span><br>
+            Price: <span>{{p.price}}</span><br>
+            Seller: <span>Seller {{p.seller}}</span><br>
+            Date: <span>Date {{p.date}}</span><br>
+            {{>reviewSection product=p}}
+            <a href={{p._id}}>GET Info</a>
+        </li>
+        {{/each}}
+    </ul>
+
+
+</body>
+
+</html>

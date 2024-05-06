@@ -1,0 +1,101 @@
+<nav class="navbar">
+    <a href="/">Home</a>
+    {{!-- <a href="/user/products/all">User Products</a> --}}
+    <a href="#">
+        <input type="text" name="searchbar" id="searchbar" placeholder="Enter product to search">
+    </a>
+    <a href="#">
+        <span class="login">Login</span>
+    </a>
+    <a href="/user/cart/show">
+        <span class="cart">Cart</span>
+        {{#if cartQuantity}}
+        <button class="cartQuantity">{{cartQuantity}}</button>
+        {{/if}}
+    </a>
+    <a href="/admin">
+        <span class="admin">Admin Page</span>
+    </a>
+    <a href="/admin/products/all">
+        <span class="">All Admin Products</span>
+    </a>
+</nav>
+<style>
+    /* Navbar Styles */
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #fff;
+        margin-right: 20px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        color: #ffcc00;
+    }
+
+    .search-container {
+        position: relative;
+    }
+
+    #searchbar {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #f4f4f4;
+        margin-right: 10px;
+        width: 250px;
+        font-size: 14px;
+    }
+
+    .search-button {
+        padding: 8px 12px;
+        background-color: #ffcc00;
+        border: none;
+        border-radius: 5px;
+        color: #333;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-button:hover {
+        background-color: #e6b800;
+    }
+
+    .cart-quantity {
+        background-color: #ffcc00;
+        color: #333;
+        padding: 2px 5px;
+        border-radius: 50%;
+        font-size: 12px;
+        margin-left: 5px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .navbar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .navbar a {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .search-container {
+            margin-bottom: 10px;
+        }
+    }
+</style>

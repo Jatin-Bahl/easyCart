@@ -1,0 +1,156 @@
+{{!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .item-list {
+            border: 1px solid #ccc;
+            box-shadow: 5px 10px 10px #ccc;
+            overflow: scroll;
+            display: flex;
+        }
+
+        .category {
+            font-size: 24px;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+        .item {
+            width: 250px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{> navbar}}
+
+    {{#each products as |product|}}
+    <div class="category">{{@key}}</div>
+
+    <div class="item-list">
+        {{#each product as |p|}}
+        <div class="item">
+            <a href="/user/products/{{p._id}}">
+                <img height="150px" src={{p.imageUrl}}></img><br>
+                Name: <span>{{p.name}}</span> <br>
+                Description: <span>{{p.description}}</span><br>
+                Price: <span>{{p.price}}</span><br>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    {{/each}}
+
+</body>
+
+</html> --}}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Item List Styles */
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        /* Category Styles */
+        .category {
+            font-size: 24px;
+            text-transform: capitalize;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Individual Item Styles */
+        .item {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        /* Item Link Styles */
+        .item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Item Image Styles */
+        .item img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Item Text Styles */
+        .item span {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    {{> navbar}}
+
+    {{#each products as |product|}}
+    <div class="category">{{@key}}</div>
+
+    <div class="item-list">
+        {{#each product as |p|}}
+        <div class="item">
+            <a href="/user/products/{{p._id}}">
+                <img src={{p.imageUrl}} alt="{{p.name}}">
+                <span>Name: {{p.name}}</span>
+                <span>Description: {{p.description}}</span>
+                <span>Price: {{p.price}}</span>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+    <br>
+    <br>
+    <br>
+    {{/each}}
+
+</body>
+
+</html>
